@@ -1,19 +1,22 @@
-﻿public class Singleton<T> where T:new()
+﻿namespace InspireTaleFramework
 {
-    private static T m_Instance;
-    private static readonly object m_Padlock = new object();
-
-    public static T Instance
+    public class Singleton<T> where T : new()
     {
-        get
+        private static T m_Instance;
+        private static readonly object m_Padlock = new object();
+
+        public static T Instance
         {
-            lock(m_Padlock)
+            get
             {
-                if(m_Instance==null)
+                lock (m_Padlock)
                 {
-                    m_Instance = new T();
+                    if (m_Instance == null)
+                    {
+                        m_Instance = new T();
+                    }
+                    return m_Instance;
                 }
-                return m_Instance;
             }
         }
     }

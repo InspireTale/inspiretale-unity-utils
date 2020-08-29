@@ -1,11 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class CompareUtil
-{
-    public static bool CompareFloat(float value1,float value2)
+namespace InspireTaleFramework{
+    public class CompareUtil
     {
-        return float.Epsilon > Mathf.Abs(value1) - Mathf.Abs(value2);
+        public static bool CompareFloat(float value1,float value2)
+        {
+            return float.Epsilon > Mathf.Abs(value1) - Mathf.Abs(value2);
+        }
     }
 }

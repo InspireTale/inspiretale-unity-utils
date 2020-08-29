@@ -183,7 +183,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 967366203721347945}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae4f9b7177f1d45428f439fce4124a97, type: 3}
+  m_Script: {fileID: 11500000, guid: 34804653597079a4dbec68cda0e4cec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fadingImage: {fileID: 967366202753894621}

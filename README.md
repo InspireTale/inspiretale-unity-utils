@@ -5,7 +5,7 @@ Unity framework, contain useful stuff. Written by Sahapat tong-on.
 
 - [Scene Transition](#scene-transition)
 - [Singleton](#singleton)
-- [Utility](#unitility)
+- [Utility](#utility)
 
 ## How to install
 

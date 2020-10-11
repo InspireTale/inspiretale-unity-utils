@@ -1,65 +1,33 @@
 ﻿using System;
-using System.Threading.Tasks;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace InspireTaleFramework
 {
-    public class SceneFadingTransition : MonoBehaviour
+    public class SceneFadingTransition : MonoSingleton<SceneFadingTransition>
     {
         [SerializeField]
         private Image fadingImage = null;
 
         public float fadingValue { get { return fadingImage.color.a; } }
-        private Color fadingRGBColor;
 
-        private static SceneFadingTransition _Instance = null;
+        private Color fadingRGBColor;
+        private Coroutine fadingCoroutine = null;
 
         void Awake()
         {
-            if (fadingImage)
-            {
-                fadingRGBColor = fadingImage.color;
-            }
-
-            _Instance = this;
+            fadingRGBColor = fadingImage.color;
         }
 
-        void OnDestroy()
+        public void FadeImageAlphaTask(float startValue, float endValue, float time_s)
         {
-            _Instance = null;
-        }
-
-        public static SceneFadingTransition GetInstance()
-        {
-            if (!_Instance)
+            if (fadingCoroutine != null)
             {
-                throw new Exception("SceneFadingTransition is not exist in the scene. Please move prefab into the scene before use it");
+                StopCoroutine(fadingCoroutine);
             }
 
-            return _Instance;
-        }
-
-        public async Task FadeImageAlphaTask(float startValue, float endValue, float time_s)
-        {
-            float changeValueStepByInTime = (endValue - startValue) / time_s * Time.deltaTime;
-
-            SetImageAlphaValue(startValue);
-
-            while (fadingValue != endValue)
-            {
-                float offsetValue = Mathf.Abs(endValue - fadingValue);
-
-                if (offsetValue < 0.01f)
-                {
-                    SetImageAlphaValue(endValue);
-                    continue;
-                }
-
-                SetImageAlphaValue(fadingValue + changeValueStepByInTime);
-
-                await Task.Delay(TimeSpan.FromSeconds(Time.deltaTime));
-            }
+            fadingCoroutine = StartCoroutine(DoFadeImageAlphaTask(startValue, endValue, time_s));
         }
 
         private void SetImageAlphaValue(float alpha)
@@ -69,6 +37,21 @@ namespace InspireTaleFramework
                                         fadingRGBColor.b,
                                         alpha);
 
+        }
+
+        private IEnumerator DoFadeImageAlphaTask(float startValue, float endValue, float time_s)
+        {
+            float alphaChangeInTime = ((endValue - startValue) / time_s) * Time.deltaTime;
+
+            SetImageAlphaValue(startValue);
+
+            for (float i = time_s; i > 0; i -= Time.deltaTime)
+            {
+                SetImageAlphaValue(fadingValue + alphaChangeInTime);
+                yield return null;
+            }
+
+            SetImageAlphaValue(endValue);
         }
     }
 }

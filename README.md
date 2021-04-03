@@ -27,7 +27,7 @@ to use character in correct position. But when we adjust a string the unicode wi
 For using you have to attach component to the object.
 
 ### Text Adjuster
-This component is for UnityEngine.UI.Text<br>\
+This component is for UnityEngine.UI.Text<br>
 
 <b>Example</b>
 

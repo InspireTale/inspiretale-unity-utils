@@ -14,7 +14,7 @@ Unity framework, contain useful stuff. Written by Sahapat tong-on.
 2. Import into Unity package by. <br>
 NOTE THAT:
 If you didn't use TextMeshPro you have to uncheck TextMeshAdjuster to prevent error.
-![UnCheckTextMeshAdjuster](https://github.com/Sahapat/InspireTaleUnityFramework/tree/master/ScreenShots/UnCheckTextMeshAdjuster.jpg)
+![UnCheckTextMeshAdjuster](https://github.com/Sahapat/InspireTaleUnityFramework/blob/master/ScreenShots/UnCheckTextMeshAdjuster.jpg)
 
 2.1 Click on **Assets** >> **Import Package** >> **Custom Package** <br>
 2.2 Then Select InspireTaleFramework package to import.

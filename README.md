@@ -11,7 +11,11 @@ Unity framework, contain useful stuff. Written by Sahapat tong-on.
 ## How to install
 
 1. Dowload Unity package from this github. There is on github releases or click this [link](https://github.com/Sahapat/InspireTaleUnityFramework/releases)
-2. Import into Unity package by <br>
+2. Import into Unity package by. <br>
+NOTE THAT:
+If you didn't use TextMeshPro you have to uncheck TextMeshAdjuster to prevent error.
+![UnCheckTextMeshAdjuster](https://github.com/Sahapat/InspireTaleUnityFramework/tree/master/ScreenShots/UnCheckTextMeshAdjuster.jpg)
+
 2.1 Click on **Assets** >> **Import Package** >> **Custom Package** <br>
 2.2 Then Select InspireTaleFramework package to import.
 

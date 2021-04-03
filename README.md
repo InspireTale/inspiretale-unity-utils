@@ -3,8 +3,9 @@ Unity framework, contain useful stuff. Written by Sahapat tong-on.
 
 ## Table Content
 
+- [TextAdjusters](#text-adjusters)
+- [Singletons](#singletons)
 - [Scene Transition](#scene-transition)
-- [Singleton](#singleton)
 - [Utility](#utility)
 
 ## How to install
@@ -19,41 +20,62 @@ Unity framework, contain useful stuff. Written by Sahapat tong-on.
     using InspireTaleFramework;
     ```
 
-## Scene Transition
+## Text Adjusters
+In Unity, there is a position bug on display some Thai character. Then we got this method from [SaladLab](https://github.com/SaladLab/Unity3D.ThaiFontAdjuster) to shift the unicode
+to use character in correct position. But when we adjust a string the unicode will be change from expect. I create this component to manage adjusted string. <br>
 
-Transition will be in prefab canvas, There are in **InspireTaleFramework** > **Prefabs** directory. For using, Drag the prefab into your scene and control via Instance of transition controller.
+For using you have to attach component to the object.
 
-### Fading
+### Text Adjuster
+This component is for UnityEngine.UI.Text<br>\
 
-Fading is transition that will change alpha of the cover image. You can change transition color by change image overlay color. The transition controller is SceneFadingTransition script. <br>
-
-Fading transition provide singleton instance to easier using. Thus you can access by
-
-```csharp
-SceneFadingTransition.Instance //   This will be an instance of Unity gameobject.
-```
-
-Then there are asynchronous function for animating fading alpha. <br>
+<b>Example</b>
 
 ```csharp
-FadeImageAlphaTask (float startValue, float endValue, float time_s)
+//  create an instance of TextAdjuster
+TextAdjuster textAdjuster = null;
 
-//  startValue - initialize value that will be set before fade
-//  endValue - final value that will be fade to.
-//  time_s - time to fade to end value in seconds.
+void Awake()
+{
+    //  initialize textAdjuster by get from the object
+    textAdjuster = GetComponent<TextAdjuster>();
 
-//  return - Task (asynchronous)
+    //  you can simply set text by text property
+    textAdjuster.text = "สวัสดี";
 
+    //  you can get text by text property too
+    Debug.Log(textAdjuster.text);
+
+    //  to access Unity "Text" there is component shortcut
+    textAdjuster.component.AddEventListener((text) => Debug.Log(text));
+}
 ```
+### TextMeshAdjuster
+This component is for TMPro.TextMeshGUI <br>
 
-Example
+<b>Example</b>
 
 ```csharp
-SceneFadingTransition.Instance.FadeImageAlphaTask(0, 1, 1f)
-//   This will be fading alpha from 0 to 1 in 1 seconds
+//  create an instance of TextMeshAdjuster
+TextMeshAdjuster textMeshAdjuster = null;
+
+void Awake()
+{
+    //  initialize textMeshAdjuster by get from the object
+    textMeshAdjuster = GetComponent<TextMeshAdjuster>();
+
+    //  you can simply set text by text property
+    textMeshAdjuster.text = "สวัสดี";
+
+    //  you can get text by text property too
+    Debug.Log(textMeshAdjuster.text);
+
+    //  to access Unity "Text" there is component shortcut
+    textMeshAdjuster.component.AddEventListener((text) => Debug.Log(text));
+}
 ```
 
-## Singleton
+## Singletons
 
 Singleton is a pattern that fix the class to have only single instance. This pattern is useful for a controller or manager that can access and have single state when call from other object without sending argument. <br>
 
@@ -91,6 +113,39 @@ class Bullet : MonoSingleton<Bullet>
 //  Now your class will be a singleton object that can access by Instance
 Bullet.Instance
 ```
+## Scene Transition
+
+Transition will be in prefab canvas, There are in **InspireTaleFramework** > **Prefabs** directory. For using, Drag the prefab into your scene and control via Instance of transition controller.
+
+### Fading
+
+Fading is transition that will change alpha of the cover image. You can change transition color by change image overlay color. The transition controller is SceneFadingTransition script. <br>
+
+Fading transition provide singleton instance to easier using. Thus you can access by
+
+```csharp
+SceneFadingTransition.Instance //   This will be an instance of Unity gameobject.
+```
+
+Then there are asynchronous function for animating fading alpha. <br>
+
+```csharp
+FadeImageAlphaTask (float startValue, float endValue, float time_s)
+
+//  startValue - initialize value that will be set before fade
+//  endValue - final value that will be fade to.
+//  time_s - time to fade to end value in seconds.
+
+//  return - Task (asynchronous)
+
+```
+
+Example
+
+```csharp
+SceneFadingTransition.Instance.FadeImageAlphaTask(0, 1, 1f)
+//   This will be fading alpha from 0 to 1 in 1 seconds
+```
 
 ## Utility
 
@@ -110,7 +165,7 @@ CompareFloat(float value1, float value2)
 RandomByPercentage(float percentage)
 //  percentage - percentage that will get true from this function
 
-//  return boolean 
+//  return boolean
 //      true if the random is match
 //      false if the random is not match
 ```
@@ -127,3 +182,6 @@ In Screen2D
 - TopScreenEdgePosition : float
 - BottomScreenEdgePosition : float
 - ScreenEdgePostion : Vector4
+
+### Special Thanks
+- [ThaiFontAdjuster](https://github.com/SaladLab/Unity3D.ThaiFontAdjuster)

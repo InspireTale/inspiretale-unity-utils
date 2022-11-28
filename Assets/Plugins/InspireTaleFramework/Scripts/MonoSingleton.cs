@@ -39,14 +39,20 @@ namespace InspireTaleFramework
                 }
             }
         }
+
+        private void Awake()
+        {
+            if (m_Instance)
+            {
+                m_Instance = this as T;
+            }
+            else
+            {
+                Destroy(this.gameObject);
+            }
+        }
         
         private void OnApplicationQuit()
-        {
-            m_ShuttingDown = true;
-        }
-
-
-        private void OnDestroy()
         {
             m_ShuttingDown = true;
         }

@@ -42,7 +42,7 @@ namespace InspireTaleFramework
 
         private void Awake()
         {
-            if (m_Instance)
+            if (m_Instance == null)
             {
                 m_Instance = this as T;
             }

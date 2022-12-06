@@ -40,7 +40,7 @@ namespace InspireTaleFramework
             }
         }
 
-        private void Awake()
+        protected virtual void Awake()
         {
             if (m_Instance == null)
             {
@@ -52,7 +52,7 @@ namespace InspireTaleFramework
             }
         }
         
-        private void OnApplicationQuit()
+        protected virtual void OnApplicationQuit()
         {
             m_ShuttingDown = true;
         }

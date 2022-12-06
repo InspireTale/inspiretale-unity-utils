@@ -39,6 +39,13 @@ namespace InspireTaleFramework
                 }
             }
         }
+        public static bool isInitialized
+        {
+            get
+            {
+                return m_Instance != null;
+            }
+        }
 
         protected virtual void Awake()
         {

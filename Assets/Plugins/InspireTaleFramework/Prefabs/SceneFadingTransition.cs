@@ -15,8 +15,9 @@ namespace InspireTaleFramework
         private Color fadingRGBColor;
         private Coroutine fadingCoroutine = null;
 
-        void Awake()
+        protected override void Awake()
         {
+            this.Awake();
             fadingRGBColor = fadingImage.color;
         }
 

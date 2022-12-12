@@ -57,7 +57,7 @@ namespace InspireTaleFramework
         void Awake ()
         {
             this.m_text = GetComponent<Text>();
-            this.m_text.text = text;
+            this.text = this.m_text.text;
         }
 
         //  *******PUBLIC FUNCTION*******

@@ -46,7 +46,7 @@ namespace InspireTaleFramework
         void Awake()
         {
             this.m_textMeshProGUI = GetComponent<TextMeshProUGUI>();
-            this.m_textMeshProGUI.text = text;
+            this.text = this.m_textMeshProGUI.text;
         }
 
         //  *******PUBLIC FUNCTION*******

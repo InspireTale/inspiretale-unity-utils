@@ -15,8 +15,7 @@ namespace InspireTaleFramework
                 if (m_ShuttingDown)
                 {
                     Debug.LogWarning("[Singleton] Instance '" + typeof(T) +
-                        "' already destroyed. Returning null.");
-                    return null;
+                        "' going to be destroyed because of ApplicationQuit.");
                 }
 
                 lock (m_Padlock)

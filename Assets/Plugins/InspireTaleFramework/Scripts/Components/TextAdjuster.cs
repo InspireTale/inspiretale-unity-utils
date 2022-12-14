@@ -30,6 +30,11 @@ namespace InspireTaleFramework
                 this.unAdjustString = value;
                 this.adjustedString = ThaiFontAdjuster.Adjust(this.unAdjustString);
 
+                if (this.m_text == null)
+                {
+                    this.m_text = GetComponent<Text>();   
+                }
+
                 //  update value to Text component
                 this.m_text.text = this.text;
             }
@@ -56,7 +61,6 @@ namespace InspireTaleFramework
         //  *******UNITY HOOK*******
         void Awake ()
         {
-            this.m_text = GetComponent<Text>();
             this.text = this.m_text.text;
         }
 

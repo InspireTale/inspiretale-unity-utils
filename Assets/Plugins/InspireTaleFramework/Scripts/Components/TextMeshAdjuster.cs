@@ -50,6 +50,7 @@ namespace InspireTaleFramework
         //  *******UNITY HOOK*******
         void Awake()
         {
+            this.m_textMeshProGUI = GetComponent<TextMeshProUGUI>();
             this.text = this.m_textMeshProGUI.text;
         }
 

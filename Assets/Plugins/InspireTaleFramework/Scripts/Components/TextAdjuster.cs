@@ -61,6 +61,7 @@ namespace InspireTaleFramework
         //  *******UNITY HOOK*******
         void Awake ()
         {
+            this.m_text = GetComponent<Text>();
             this.text = this.m_text.text;
         }
 

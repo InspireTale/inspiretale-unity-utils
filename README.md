@@ -28,11 +28,7 @@ If you didn't use TextMeshPro you have to uncheck TextMeshAdjuster to prevent er
 In Unity, there is a position bug on display some Thai character. Then we got this method from [SaladLab](https://github.com/SaladLab/Unity3D.ThaiFontAdjuster) to shift the unicode
 to use character in correct position. But when we adjust a string the unicode will be change from expect. I create this component to manage adjusted string. <br>
 
-<<<<<<< Updated upstream
-For using you have to attach component to the object.
-=======
 Transition will be in prefab canvas, There are in **InspireTale** > **Prefabs** directory. For using, Drag the prefab into your scene and control via Instance of transition controller.
->>>>>>> Stashed changes
 
 ### Text Adjuster
 This component is for UnityEngine.UI.Text<br>

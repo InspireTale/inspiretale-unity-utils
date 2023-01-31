@@ -1,5 +1,5 @@
-# InspireTale Framework
-Unity framework, contain useful stuff. Written by Sahapat tong-on.
+# InspireTale Utils
+Unity pakcage which contain useful stuff. Written by Sahapat tong-on.
 
 ## Table Content
 

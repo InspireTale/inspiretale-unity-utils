@@ -1,4 +1,4 @@
-namespace InspireTaleFramework
+namespace InspireTale.Utils
 {
     public enum MouseButton
     {

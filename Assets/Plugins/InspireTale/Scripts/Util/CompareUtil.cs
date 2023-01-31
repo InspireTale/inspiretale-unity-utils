@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace InspireTaleFramework{
+namespace InspireTale.Utils{
     public class CompareUtil
     {
         public static bool CompareFloat(float value1,float value2)

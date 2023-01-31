@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace InspireTaleFramework
+namespace InspireTale.Utils
 {
     public class SceneFadingTransition : MonoSingleton<SceneFadingTransition>
     {

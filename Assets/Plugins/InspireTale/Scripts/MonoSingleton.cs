@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace InspireTaleFramework
+namespace InspireTale.Utils
 {
     public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
     {

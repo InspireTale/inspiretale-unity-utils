@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace InspireTaleFramework
+namespace InspireTale.Utils
 {
     public class ScreenUtil
     {

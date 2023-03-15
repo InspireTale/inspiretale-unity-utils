@@ -36,7 +36,7 @@ namespace InspireTale.Utils
                 }
 
                 //  update value to Text component
-                this.m_text.text = this.text;
+                this.m_text.text = this.adjustedString;
             }
         }
 

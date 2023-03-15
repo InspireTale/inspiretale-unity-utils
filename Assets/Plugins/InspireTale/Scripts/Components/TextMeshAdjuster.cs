@@ -30,7 +30,7 @@ namespace InspireTale.Utils
                     this.m_textMeshProGUI = GetComponent<TextMeshProUGUI>();
                 }
 
-                this.m_textMeshProGUI.text = this.text;
+                this.m_textMeshProGUI.text = this.adjustedString;
             }
         }
 

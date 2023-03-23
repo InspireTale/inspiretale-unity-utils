@@ -10,6 +10,9 @@ public class SampleSceneUtil : MonoBehaviour
     [SerializeField]
     private Text m_text = null;
 
+    [SerializeField]
+    private Text[] m_MouseButtonTexts;
+
     private int tickInterval_ms = 1000;
     private long currentTime_ms = 0;
 
@@ -18,12 +21,46 @@ public class SampleSceneUtil : MonoBehaviour
 
     void Update()
     {
+        for (int i = 0; i < this.m_MouseButtonTexts.Length; i++)
+        {
+            this.HideText(this.m_MouseButtonTexts[i]);
+        }
+
+        if (Input.GetMouseButton(MouseButton.Left))
+        {
+            this.ShowText(this.m_MouseButtonTexts[MouseButton.Left]);
+        }
+
+        if (Input.GetMouseButton(MouseButton.Right))
+        {
+            this.ShowText(this.m_MouseButtonTexts[MouseButton.Center]);
+        }
+
+        if (Input.GetMouseButton(MouseButton.Center))
+        {
+            this.ShowText(this.m_MouseButtonTexts[MouseButton.Right]);
+        }
+
         long currentTime_ms = DateTimeUtil.ToMsTimestamp(DateTime.Now);
         if (currentTime_ms > this.currentTime_ms)
         {
             this.currentTime_ms = currentTime_ms + tickInterval_ms;
             this.UpdatePreview();
         }
+    }
+
+    private void HideText(Text text)
+    {
+        Color currentColor = text.color;
+        Color newColor = new Color(currentColor.r, currentColor.g, currentColor.b, 0);
+        text.color = newColor;
+    }
+
+    private void ShowText(Text text)
+    {
+        Color currentColor = text.color;
+        Color newColor = new Color(currentColor.r, currentColor.g, currentColor.b, 1);
+        text.color = newColor;
     }
 
     private void UpdatePreview()

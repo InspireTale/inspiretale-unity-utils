@@ -481,7 +481,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 48
+    m_FontSize: 32
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -492,12 +492,17 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Screen Util
+  m_Text: 'DateTime Util
+
+    Current UnixTimeStamp: 1679567916, Current MsTimeStamp:
+    1679567916031
+
+    Screen Util
 
     ---Screen Util---
 
-    ScreenWidth 1920, ScreenHeight
-    1080
+    ScreenWidth 1920,
+    ScreenHeight 1080
 
     ---Screen 2D---
 
@@ -519,7 +524,7 @@ MonoBehaviour:
     ---RandomByPercentage---
 
     Percentage:
-    80, True True True True True True True True True True
+    80, True True True True True True True True False True
 
 '
 --- !u!222 &2040537951

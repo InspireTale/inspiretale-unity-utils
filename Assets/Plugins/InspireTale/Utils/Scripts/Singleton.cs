@@ -11,12 +11,20 @@
             {
                 lock (m_Padlock)
                 {
-                    if (m_Instance == null)
+                    if (!isInitialized)
                     {
                         m_Instance = new T();
                     }
                     return m_Instance;
                 }
+            }
+        }
+
+        public static bool isInitialized
+        {
+            get
+            {
+                return m_Instance != null;
             }
         }
     }

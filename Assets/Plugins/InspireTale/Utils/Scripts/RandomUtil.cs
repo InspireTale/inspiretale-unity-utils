@@ -2,7 +2,7 @@
 
 namespace InspireTale.Utils
 {
-    public class RandomUtil
+    public static class RandomUtil
     {
         public static bool RandomByPercentage(float percentage)
         {

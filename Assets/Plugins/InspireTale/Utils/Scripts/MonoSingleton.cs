@@ -49,7 +49,7 @@ namespace InspireTale.Utils
 
         protected virtual void Awake()
         {
-            if (m_Instance == null)
+            if (!isInitialized)
             {
                 m_Instance = this as T;
             }

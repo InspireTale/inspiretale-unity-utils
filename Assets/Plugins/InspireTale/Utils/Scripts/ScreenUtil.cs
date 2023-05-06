@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace InspireTale.Utils
 {
-    public class ScreenUtil
+    public static class ScreenUtil
     {
         public static int ScreenWidth
         {

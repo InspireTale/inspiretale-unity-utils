@@ -3,7 +3,7 @@
     public class Singleton<T> where T : new()
     {
         private static T m_Instance;
-        private static readonly object m_Padlock = new object();
+        private static readonly object m_Padlock = new();
 
         public static T Instance
         {
@@ -11,7 +11,7 @@
             {
                 lock (m_Padlock)
                 {
-                    if (!isInitialized)
+                    if (!IsInitialized)
                     {
                         m_Instance = new T();
                     }
@@ -20,12 +20,6 @@
             }
         }
 
-        public static bool isInitialized
-        {
-            get
-            {
-                return m_Instance != null;
-            }
-        }
+        public static bool IsInitialized => m_Instance != null;
     }
 }

@@ -6,7 +6,7 @@ namespace InspireTale.Utils
     {
         public static bool CompareFloat(float value1, float value2, float Epsilon = float.Epsilon)
         {
-            return float.Epsilon > Mathf.Abs(value1 - value2);
+            return Epsilon > Mathf.Abs(value1 - value2);
         }
     }
 }

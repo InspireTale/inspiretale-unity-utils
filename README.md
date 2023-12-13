@@ -12,10 +12,6 @@ Unity pakcage which contain useful stuff. Written by Sahapat tong-on.
 
 1. Dowload Unity package from this github. There is on github releases or click this [link](https://github.com/Sahapat/InspireTaleUnityFramework/releases)
 2. Import into Unity package by. <br>
-NOTE THAT:
-If you didn't use TextMeshPro you have to uncheck TextMeshAdjuster to prevent error.
-![UnCheckTextMeshAdjuster](https://github.com/Sahapat/InspireTaleUnityFramework/blob/master/ScreenShots/UnCheckTextMeshAdjuster.jpg)
-
 2.1 Click on **Assets** >> **Import Package** >> **Custom Package** <br>
 2.2 Then Select InspireTale Utils package to import.
 
@@ -24,60 +20,7 @@ If you didn't use TextMeshPro you have to uncheck TextMeshAdjuster to prevent er
     using InspireTale.Utils;
     ```
 
-## Text Adjusters
-In Unity, there is a position bug on display some Thai character. Then we got this method from [SaladLab](https://github.com/SaladLab/Unity3D.ThaiFontAdjuster) to shift the unicode
-to use character in correct position. But when we adjust a string the unicode will be change from expect. I create this component to manage adjusted string. <br>
-
-Transition will be in prefab canvas, There are in **InspireTale** > **Prefabs** directory. For using, Drag the prefab into your scene and control via Instance of transition controller.
-
-### Text Adjuster
-This component is for UnityEngine.UI.Text<br>
-
 <b>Example</b>
-
-```csharp
-//  create an instance of TextAdjuster
-TextAdjuster textAdjuster = null;
-
-void Awake()
-{
-    //  initialize textAdjuster by get from the object
-    textAdjuster = GetComponent<TextAdjuster>();
-
-    //  you can simply set text by text property
-    textAdjuster.text = "สวัสดี";
-
-    //  you can get text by text property too
-    Debug.Log(textAdjuster.text);
-
-    //  to access Unity "Text" there is component shortcut
-    textAdjuster.component.AddEventListener((text) => Debug.Log(text));
-}
-```
-### TextMeshAdjuster
-This component is for TMPro.TextMeshGUI <br>
-
-<b>Example</b>
-
-```csharp
-//  create an instance of TextMeshAdjuster
-TextMeshAdjuster textMeshAdjuster = null;
-
-void Awake()
-{
-    //  initialize textMeshAdjuster by get from the object
-    textMeshAdjuster = GetComponent<TextMeshAdjuster>();
-
-    //  you can simply set text by text property
-    textMeshAdjuster.text = "สวัสดี";
-
-    //  you can get text by text property too
-    Debug.Log(textMeshAdjuster.text);
-
-    //  to access Unity "Text" there is component shortcut
-    textMeshAdjuster.component.AddEventListener((text) => Debug.Log(text));
-}
-```
 
 ## Singletons
 
@@ -186,6 +129,3 @@ In Screen2D
 - TopScreenEdgePosition : float
 - BottomScreenEdgePosition : float
 - ScreenEdgePostion : Vector4
-
-### Special Thanks
-- [ThaiFontAdjuster](https://github.com/SaladLab/Unity3D.ThaiFontAdjuster)

@@ -17,8 +17,6 @@ public class SampleSceneUtil : MonoBehaviour
     private long currentTime_ms = 0;
 
     private readonly StringBuilder stringBuilder = new();
-
-
     void Update()
     {
         for (int i = 0; i < this.m_MouseButtonTexts.Length; i++)

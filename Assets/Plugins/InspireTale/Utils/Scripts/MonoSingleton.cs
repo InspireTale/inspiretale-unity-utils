@@ -5,7 +5,7 @@ namespace InspireTale.Utils
     public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
     {
         private static bool m_ShuttingDown = false;
-        private static object m_Padlock = new object();
+        private static readonly object m_Padlock = new();
         private static T m_Instance;
 
         public static T Instance
@@ -39,17 +39,11 @@ namespace InspireTale.Utils
                 }
             }
         }
-        public static bool isInitialized
-        {
-            get
-            {
-                return m_Instance != null;
-            }
-        }
+        public static bool IsInitialized => m_Instance != null;
 
         protected virtual void Awake()
         {
-            if (!isInitialized)
+            if (!IsInitialized)
             {
                 m_Instance = this as T;
             }

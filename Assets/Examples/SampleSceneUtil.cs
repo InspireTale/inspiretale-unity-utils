@@ -13,12 +13,10 @@ public class SampleSceneUtil : MonoBehaviour
     [SerializeField]
     private Text[] m_MouseButtonTexts;
 
-    private int tickInterval_ms = 1000;
+    private readonly int tickInterval_ms = 1000;
     private long currentTime_ms = 0;
 
-    private StringBuilder stringBuilder = new StringBuilder();
-
-
+    private readonly StringBuilder stringBuilder = new();
     void Update()
     {
         for (int i = 0; i < this.m_MouseButtonTexts.Length; i++)
@@ -52,14 +50,14 @@ public class SampleSceneUtil : MonoBehaviour
     private void HideText(Text text)
     {
         Color currentColor = text.color;
-        Color newColor = new Color(currentColor.r, currentColor.g, currentColor.b, 0);
+        Color newColor = new(currentColor.r, currentColor.g, currentColor.b, 0);
         text.color = newColor;
     }
 
     private void ShowText(Text text)
     {
         Color currentColor = text.color;
-        Color newColor = new Color(currentColor.r, currentColor.g, currentColor.b, 1);
+        Color newColor = new(currentColor.r, currentColor.g, currentColor.b, 1);
         text.color = newColor;
     }
 
